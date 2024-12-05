@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prezentare Resurse</title>
+  <style>
+    /* Stiluri CSS cu culori elegante */
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #e0e7ff; /* Baby Blue */
+      color: #333;
+    }
+
+    header {
+      background-color: #8e44ad; /* Violet */
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      font-family: 'Times New Roman', serif;
+    }
+
+    header p {
+      font-size: 1.2em;
+    }
+
+    section {
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+    }
+
+    h2 {
+      color: #6c5ce7; /* Violet mai deschis */
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #ddd;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f0f4f8; /* Baby Blue */
+      color: #333;
+    }
+
+    td {
+      background-color: #fafafa;
+    }
+
+    img.rounded {
+      border-radius: 10px;
+      width: 100%;
+      max-width: 700px;
+      margin-top: 20px;
+    }
+
+    #slideshow {
+      position: relative;
+      width: 100%;
+      max-width: 700px;
+      margin-top: 20px;
+      overflow: hidden;
+    }
+
+    #slideshow img {
+      display: none;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    #slideshow img:first-child {
+      display: block;
+    }
+
+    /* Stilizare pentru linkuri (email) */
+    a {
+      color: #ff69b4; /* Baby Pink */
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mesaj sugestiv pentru dublu click */
+    #message {
+      font-size: 1.1em;
+      font-style: italic;
+      color: #6c5ce7; /* Violet */
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Prezentarea Resurselor Personale</h1>
+  <p>Nume: Panaitiu Georgiana-Andrea</p>
+  <p>Email: <a href="mailto:Panaitiu.Si.Ge@student.utcluj.ro">Panaitiu.Si.Ge@student.utcluj.ro</a></p>
+</header>
+
+<main>
+  <!-- Secțiunea 1: Structura rețelei -->
+  <section id="network-structure">
+    <h2>Structura Rețelei Personale</h2>
+    <img src="model-retea-wireless-ng-network.jpg" alt="Diagrama Rețelei" class="rounded">
+    <p>Adresa MAC: 84-C5-A6-2D-82-91</p>
+    <p>Adresa IP: 193.226.6.237</p>
+    <p>Debit Download: 50.24 Mbps</p>
+    <p>Debit Upload: 68.51 Mbps</p>
+  </section>
+
+  <!-- Secțiunea 2: Specificații tehnice -->
+  <section id="technical-specs">
+    <h2>Specificațiile Stației Principale</h2>
+    <table>
+      <thead>
+      <tr>
+        <th>Denumire Componentă</th>
+        <th>Parametri</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Procesor</td>
+        <td>AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx 2.10 GHz</td>
+      </tr>
+      <tr>
+        <td>RAM</td>
+        <td>8,00 GB (5,95 GB utilizabile)</td>
+      </tr>
+      <tr>
+        <td>Stocare</td>
+        <td>Disk Local(C:) - 243 GB</td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Secțiunea 3: Monitorizare resurse -->
+  <section id="resource-monitor" ondblclick="startSlideshow()">
+    <h2>Monitorizare Resurse</h2>
+    <div id="slideshow">
+      <img src="328-818x490.jpg" alt="Utilizare Resurse">
+      <img src="ancom-tarifele-de-utilizare-a-resurselor-de-numerotatie-vor-fi-stabilite-printr-un-mecanism-bazat-pe-s21849.jpg" alt="Utilizare Resurse">
+      <img src="utilizare_red.jpg" alt="Utilizare Resurse">
+    </div>
+    <div id="message">Dublu click pentru a vizualiza slideshow-ul resurselor utilizate!</div>
+  </section>
+</main>
+
+<script>
+  /* JavaScript pentru slideshow cu tranziție mai lentă */
+  let slideIndex = 0;
+  let slides;
+
+  function startSlideshow() {
+    slides = document.querySelectorAll("#slideshow img");
+    setInterval(showNextSlide, 5000); // Schimbare imagine la fiecare 5 secunde
+    document.getElementById("message").innerText = "Slideshow-ul este acum activ!";
+  }
+
+  function showNextSlide() {
+    slides[slideIndex].style.display = "none";
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].style.display = "block";
+  }
+</script>
+</body>
+</html>
